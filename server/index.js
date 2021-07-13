@@ -1,5 +1,4 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3001;
@@ -19,7 +18,15 @@ const searchValuesSchema = new mongoose.Schema({
     search_value: String,
 });
 
+const articleDataSchema = new mongoose.Schema({
+    title: String,
+    description: String,
+    url: String,
+});
+
 const SearchValue = mongoose.model("SearchValue", searchValuesSchema);
+
+const ArticleData = mongoose.model("ArticleData", articleDataSchema);
 
 app.use(express.json({ limit: "1mb" }));
 
@@ -44,17 +51,17 @@ app.post("/searchValue", (req, res) => {
 app.post("/clickedArticle", (req, res) => {
     const { data } = req.body;
 
-    const articleData = {
+    const newArticleData = new ArticleData({
         title: data.title,
         description: data.description,
         url: data.url,
-    };
+    });
 
     console.log("I got a clickedArticle request!");
-    console.log(articleData);
-    clickedArticlesArray.push(articleData);
+    console.log(newArticleData);
+    clickedArticlesArray.push(newArticleData);
     console.log(clickedArticlesArray);
-    // addSearchValuestoDb(articleData).catch(console.dir);
+    newArticleData.save();
 });
 
 app.listen(PORT, () => {
