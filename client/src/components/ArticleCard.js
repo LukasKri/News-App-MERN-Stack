@@ -15,8 +15,8 @@ const ArticleCard = ({ article }) => {
     const handleClick = (e) => {
         // If article is clicked with left or middle mouse button.
         if (e.button === 0 || e.button === 1) {
-            console.log("Article clicked: " + article.url);
-            fetchClickedArticleToTheServer(article.url);
+            console.log("Article clicked: " + article);
+            fetchClickedArticleToTheServer(article);
         }
     };
 
@@ -27,7 +27,7 @@ const ArticleCard = ({ article }) => {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
-            body: JSON.stringify({ clicked_article: data }),
+            body: JSON.stringify({ data }),
         };
 
         fetch("/clickedArticle", requestOptions).catch((error) => {

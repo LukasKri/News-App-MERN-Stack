@@ -83,7 +83,7 @@ const Header = () => {
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
-            body: JSON.stringify({ search_value: data }),
+            body: JSON.stringify({ data }),
         };
 
         fetch("/searchValue", requestOptions).catch((error) => {
