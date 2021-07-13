@@ -16,7 +16,7 @@ const NoArticleError = () => {
     );
 };
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     noArticleContainer: {
         position: "absolute",
         left: "50%",
@@ -25,9 +25,12 @@ const useStyles = makeStyles({
     },
     noArticleText: {
         textAlign: "center",
-        fontSize: 26,
+        fontSize: 20,
         fontWeight: 700,
+        [theme.breakpoints.up("md")]: {
+            fontSize: 26,
+        },
     },
-});
+}));
 
 export default NoArticleError;

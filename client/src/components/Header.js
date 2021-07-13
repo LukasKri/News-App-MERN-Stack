@@ -120,6 +120,7 @@ const Header = () => {
                         className={classes.button}
                         type="submit"
                         variant="contained"
+                        disabled={notAllowedInputValue}
                     >
                         <SearchIcon fontSize="large" />
                     </Button>
@@ -157,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignContent: "center",
         width: "100%",
-        paddingTop: 10,
+        paddingTop: 15,
         [theme.breakpoints.up("md")]: {
             paddingTop: 40,
         },
