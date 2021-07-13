@@ -14,7 +14,7 @@ mongoose.connect(
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
-const searchValuesSchema = new mongoose.Schema({
+const searchValueSchema = new mongoose.Schema({
     search_value: String,
 });
 
@@ -24,15 +24,15 @@ const articleDataSchema = new mongoose.Schema({
     url: String,
 });
 
-const SearchValue = mongoose.model("SearchValue", searchValuesSchema);
+const SearchValue = mongoose.model("SearchValue", searchValueSchema);
 
 const ArticleData = mongoose.model("ArticleData", articleDataSchema);
 
 app.use(express.json({ limit: "1mb" }));
 
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
-});
+// app.get("/api", (req, res) => {
+//     res.json({ message: "Hello from server!" });
+// });
 
 app.post("/searchValue", (req, res) => {
     const { data } = req.body;

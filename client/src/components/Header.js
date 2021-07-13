@@ -76,6 +76,7 @@ const Header = () => {
         }
     };
 
+    // Function for search value fetching to the server.
     const fetchSearchValueToTheServer = (data) => {
         const requestOptions = {
             method: "POST",

@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
     const date = article.publishedAt.slice(0, 10);
     const time = article.publishedAt.slice(11, 16);
 
-    const handleClick = (e) => {
+    const handleMouseClick = (e) => {
         // If article is clicked with left or middle mouse button.
         if (e.button === 0 || e.button === 1) {
             console.log("Article clicked: " + article);
@@ -20,6 +20,7 @@ const ArticleCard = ({ article }) => {
         }
     };
 
+    // Function for clicked article data fetching to the server.
     const fetchClickedArticleToTheServer = (data) => {
         const requestOptions = {
             method: "POST",
@@ -41,7 +42,7 @@ const ArticleCard = ({ article }) => {
             href={article.url}
             target="blank_"
             rel="noopener noreferrer"
-            onMouseDown={handleClick}
+            onMouseDown={handleMouseClick}
         >
             <Card className={classes.root}>
                 <CardActionArea>
@@ -49,7 +50,6 @@ const ArticleCard = ({ article }) => {
                         className={classes.image}
                         image={article.image}
                         title="Article-image"
-                        alt="article-poster"
                     />
                     <CardContent>
                         <Typography
@@ -63,6 +63,7 @@ const ArticleCard = ({ article }) => {
                         </Typography>
                         <Box className={classes.descPub}>
                             <Typography
+                                className={classes.description}
                                 variant="body2"
                                 color="textSecondary"
                                 component="p"
@@ -116,6 +117,11 @@ const useStyles = makeStyles((theme) => ({
     title: {
         letterSpacing: -1,
         fontSize: 18,
+    },
+    description: {
+        height: 105,
+        overflow: "hidden",
+        textOverflow: "ellipsis",
     },
     descPub: {
         display: "flex",
