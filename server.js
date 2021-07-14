@@ -24,7 +24,14 @@ const SearchValue = mongoose.model("SearchValue", searchValueSchema);
 
 const ArticleData = mongoose.model("ArticleData", articleDataSchema);
 
+// serve the react app files
+app.use(express.static(`${__dirname}/client/build`));
+
 app.use(express.json({ limit: "1mb" }));
+
+app.get("/api/hello", (req, res) => {
+    res.json({ message: "Hello World" });
+});
 
 app.post("/searchValue", (req, res) => {
     const { data } = req.body;
