@@ -5,8 +5,8 @@ const Loading = () => {
     const classes = useStyles();
 
     return (
-        <Box className={classes.loadingContainer}>
-            <Typography className={classes.loadingText} variant="body2">
+        <Box className={classes.container}>
+            <Typography className={classes.text} variant="body2">
                 Loading articles...
             </Typography>
         </Box>
@@ -14,13 +14,13 @@ const Loading = () => {
 };
 
 const useStyles = makeStyles({
-    loadingContainer: {
+    container: {
         position: "absolute",
         left: "50%",
         width: 300,
         marginLeft: -150,
     },
-    loadingText: {
+    text: {
         textAlign: "center",
         fontSize: 26,
         fontWeight: 700,

@@ -4,7 +4,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import { Box } from "@material-ui/core";
+import { Box, Link } from "@material-ui/core";
 
 const ArticleCard = ({ article }) => {
     const classes = useStyles();
@@ -15,7 +15,6 @@ const ArticleCard = ({ article }) => {
     const handleMouseClick = (e) => {
         // If article is clicked with left or middle mouse button.
         if (e.button === 0 || e.button === 1) {
-            console.log("Article clicked: " + article);
             fetchClickedArticleToTheServer(article);
         }
     };
@@ -37,7 +36,7 @@ const ArticleCard = ({ article }) => {
     };
 
     return (
-        <a
+        <Link
             className={classes.cardContent}
             href={article.url}
             target="blank_"
@@ -61,7 +60,7 @@ const ArticleCard = ({ article }) => {
                         >
                             {article.title}
                         </Typography>
-                        <Box className={classes.descPub}>
+                        <Box className={classes.textbox}>
                             <Typography
                                 className={classes.description}
                                 variant="body2"
@@ -82,13 +81,15 @@ const ArticleCard = ({ article }) => {
                     </CardContent>
                 </CardActionArea>
             </Card>
-        </a>
+        </Link>
     );
 };
 
 const useStyles = makeStyles((theme) => ({
     cardContent: {
-        textDecoration: "none",
+        "&:hover": {
+            textDecoration: "none",
+        },
     },
     root: {
         maxWidth: 260,
@@ -118,16 +119,16 @@ const useStyles = makeStyles((theme) => ({
         letterSpacing: -1,
         fontSize: 18,
     },
-    description: {
-        height: 105,
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-    },
-    descPub: {
+    textbox: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         height: 130,
+    },
+    description: {
+        height: 105,
+        overflow: "hidden",
+        textOverflow: "ellipsis",
     },
     published: {
         display: "flex",

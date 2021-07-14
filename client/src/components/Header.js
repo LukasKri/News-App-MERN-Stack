@@ -14,15 +14,15 @@ const Header = () => {
 
     // State for input query.
     const [query, setQuery] = useState("");
-    // State for article's array.
+    // State for articles array.
     const [articles, setArticles] = useState([]);
     // State for form submission.
     const [submitted, setSubmitted] = useState(false);
-    // State for loading after form submission.
+    // State for loading.
     const [loading, setLoading] = useState(false);
-    //State for error handling.
+    // State for error on form submission.
     const [error, setError] = useState(false);
-    // State to display input validation error.
+    // State for error on input validation.
     const [notAllowedInputValue, setNotAllowedInputValue] = useState(false);
 
     const allowedInputValues = /^[0-9a-zA-Z-\s]+$/;
@@ -36,14 +36,14 @@ const Header = () => {
         }
     };
 
-    // Function for user input handling.
+    // Function for user input handling and setting query.
     const handleInputChange = (e) => {
         let value = e.target.value;
-        setQuery(value);
         validateInput(value);
+        setQuery(value);
     };
 
-    // Function for search form submit handling.
+    // Function for form submission.
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
@@ -63,8 +63,6 @@ const Header = () => {
                 const res = await fetch(SEARCH_ENDPOINT);
                 const data = await res.json();
 
-                console.log(data);
-
                 setArticles(data.articles);
                 setLoading(false);
                 setSubmitted(true);
@@ -76,7 +74,7 @@ const Header = () => {
         }
     };
 
-    // Function for search value fetching to the server.
+    // Function fetching search value to the server.
     const fetchSearchValueToTheServer = (data) => {
         const requestOptions = {
             method: "POST",
@@ -115,6 +113,7 @@ const Header = () => {
                         onChange={handleInputChange}
                         placeholder="Search for article"
                         inputProps={{ maxLength: 40 }}
+                        autoFocus
                     />
                     <Button
                         className={classes.button}
@@ -155,10 +154,10 @@ const useStyles = makeStyles((theme) => ({
     },
     form: {
         display: "flex",
-        justifyContent: "center",
         alignContent: "center",
+        justifyContent: "center",
         width: "100%",
-        paddingTop: 15,
+        paddingTop: 12,
         [theme.breakpoints.up("md")]: {
             paddingTop: 40,
         },

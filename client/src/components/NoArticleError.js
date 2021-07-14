@@ -5,11 +5,11 @@ const NoArticleError = () => {
     const classes = useStyles();
 
     return (
-        <Box className={classes.noArticleContainer}>
-            <Typography className={classes.noArticleText} variant="body2">
+        <Box className={classes.container}>
+            <Typography className={classes.text} variant="body2">
                 Sorry, no article was found,
             </Typography>
-            <Typography className={classes.noArticleText} variant="body2">
+            <Typography className={classes.text} variant="body2">
                 please try other keywords.
             </Typography>
         </Box>
@@ -17,13 +17,13 @@ const NoArticleError = () => {
 };
 
 const useStyles = makeStyles((theme) => ({
-    noArticleContainer: {
+    container: {
         position: "absolute",
         left: "50%",
         width: 360,
         marginLeft: -180,
     },
-    noArticleText: {
+    text: {
         textAlign: "center",
         fontSize: 20,
         fontWeight: 700,

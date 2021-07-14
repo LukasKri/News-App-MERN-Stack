@@ -1,27 +1,27 @@
-import { Box, Typography } from "@material-ui/core";
+import { Box, Link, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const Footer = () => {
     const classes = useStyles();
 
     return (
-        <Box className={classes.footerContainer}>
-            <a
+        <Box className={classes.container}>
+            <Link
                 href="https://github.com/LukasKri"
-                className={classes.footerDetails}
+                className={classes.details}
                 target="blank_"
                 rel="noopener noreferrer"
             >
-                <Typography className={classes.footerText} variant="body2">
+                <Typography className={classes.text} variant="body2">
                     Created by Lukas Krisikaitis, 2021
                 </Typography>
-            </a>
+            </Link>
         </Box>
     );
 };
 
 const useStyles = makeStyles((theme) => ({
-    footerContainer: {
+    container: {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -34,11 +34,13 @@ const useStyles = makeStyles((theme) => ({
             marginTop: 20,
         },
     },
-    footerDetails: {
-        color: "rgb(15, 15, 15)",
-        textDecoration: "none",
+    details: {
+        color: "#0f0f0f",
+        "&:hover": {
+            textDecoration: "none",
+        },
     },
-    footerText: {
+    text: {
         fontSize: 12,
         fontWeight: 700,
         [theme.breakpoints.up("md")]: {
