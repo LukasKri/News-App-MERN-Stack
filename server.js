@@ -1,14 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-mongoose.connect(
-    "mongodb+srv://admin:admin@news-app.bdk3q.mongodb.net/news-app-values",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 const searchValueSchema = new mongoose.Schema({
     search_value: String,

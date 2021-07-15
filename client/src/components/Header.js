@@ -47,7 +47,7 @@ const Header = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        const API_KEY = "3d91233b06b4fca8afc5bc43eb649050";
+        const API_KEY = process.env.REACT_APP_API_KEY;
 
         const SEARCH_ENDPOINT = `https://gnews.io/api/v4/search?q=${query}&max=9&token=${API_KEY}`;
 
