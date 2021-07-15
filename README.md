@@ -23,7 +23,7 @@ https://news-app-mern-stack.herokuapp.com/
 -   [Instructions for deployment](#instructions-for-deployment)
 -   [Status](#status)
 -   [Contact](#contact)
--   [License](#licence)
+-   [License](#mit-license)
 
 ## Technologies
 
@@ -64,13 +64,12 @@ If you find any bug or would like to add a new feature to the codebase, please c
 
 1. Create an account on [Heroku](https://www.heroku.com/home) cloud service.
 2. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
-3. Create new app in [Heroku dashboard](https://dashboard.heroku.com/apps), app name should be unique.
-4. Follow instructions for deployment process.
-5. Add Config Vars for secrets in your `.env` files, run
+3. Create a new app in [Heroku dashboard](https://dashboard.heroku.com/apps), app name should be unique.
+4. Follow instructions for the deployment process.
+5. Add Config Vars for secrets in your `.env` files, run these values in the terminal.
 
--   heroku config:set MONGODB_CONNECTION_STRING=mongodb+srv://admin:<password>@news-app.bdk3q.mongodb.net/<databaseName>
--   heroku config:set REACT_APP_API_KEY=<your_api_key>
-    in the terminal.
+- heroku config:set MONGODB_CONNECTION_STRING=mongodb+srv://admin:<password>@news-app.bdk3q.mongodb.net/<databaseName>
+- heroku config:set REACT_APP_API_KEY=<your_api_key>
 
 6. To receive user log values to your MongoDB Atlas Cloud Database, go to your database on MongoDB dashboard, then
    `Network Access` and edit `IP Address` to "allow access from anywhere".
