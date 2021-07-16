@@ -4,7 +4,7 @@
 
 I've created responsive website for news article search, list and preview. [GNews API](https://gnews.io/) was used to search
 for articles from a variety of sources, including Google News. Front-end was created with React library
-and Material-UI components, back-end was created with Node.js and MongoDB Atlas Cloud Database, which
+using Material-UI components, back-end was created with Node.js and MongoDB Atlas Cloud Database, which
 logs user actions (search queries and opened articles data) to the cloud database. The app is deployed in
 [Heroku](https://www.heroku.com/home) cloud service.
 
@@ -29,11 +29,11 @@ https://news-app-mern-stack.herokuapp.com/
 
 Front-end:
 
--   JavaScript ES6 + React + Material UI
+-   JavaScript ES6 + React + Material-UI
 
 Back-end:
 
--   Node.js + Express + MongoDb Atlas Cloud Database
+-   Node.js + Express + MongoDB Atlas Cloud Database
 
 ## Setup for local development
 
@@ -52,7 +52,7 @@ value in `.env` file in the `client` directory.
 To get `MONGODB_CONNECTION_STRING` value visit [MongoDB](https://www.mongodb.com/), create an account and follow
 [instructions](https://docs.atlas.mongodb.com/tutorial/create-atlas-account/) to create a free Atlas Cloud Database - Cluster.
 Then replace `<password>` to your database password value and `<databaseName>` to your database name in `.env` file
-in the `root` direcotry.
+in the `root` directory.
 
 To start back-end development version - run `npm run server` in the terminal in the `root` directory.
 
@@ -66,13 +66,14 @@ If you find any bug or would like to add a new feature to the codebase, please c
 2. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 3. Create a new app in [Heroku dashboard](https://dashboard.heroku.com/apps), app name should be unique.
 4. Follow instructions for the deployment process.
-5. Add Config Vars for secrets in your `.env` files, run these values in the terminal.
+5. Add Config Vars for secrets in your `.env` files, replace your values and run these commands in the terminal:
 
-- heroku config:set MONGODB_CONNECTION_STRING=mongodb+srv://admin:<password>@news-app.bdk3q.mongodb.net/<databaseName>
-- heroku config:set REACT_APP_API_KEY=<your_api_key>
+`heroku config:set MONGODB_CONNECTION_STRING=mongodb+srv://admin:<password>@news-app.bdk3q.mongodb.net/<databaseName>`
 
-6. To receive user log values to your MongoDB Atlas Cloud Database, go to your database on MongoDB dashboard, then
-   `Network Access` and edit `IP Address` to "allow access from anywhere".
+`heroku config:set REACT_APP_API_KEY=<your_api_key>`
+
+6. To receive and save user log values in your MongoDB Atlas Cloud Database, select your database on MongoDB dashboard, then select
+   `Network Access` settings and edit `IP Address` to "allow access from anywhere".
 
 ## Status
 
