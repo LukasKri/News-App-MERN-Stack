@@ -6,11 +6,12 @@ I've created responsive website for news article search, list and preview. [GNew
 for articles from a variety of sources, including Google News. Front-end was created with React library
 using Material-UI components, back-end was created with Node.js and MongoDB Atlas Cloud Database, which
 logs user actions (search queries and opened articles data) to the cloud database. The app is deployed in
-[Heroku](https://www.heroku.com/home) cloud service.
+
+<!-- [Heroku](https://www.heroku.com/home) cloud service. -->
 
 ## Live demo
 
-https://news-app-mern-stack.herokuapp.com/
+<!-- https://news-app-mern-stack.herokuapp.com/ -->
 
 ## GIF
 
@@ -18,33 +19,33 @@ https://news-app-mern-stack.herokuapp.com/
 
 ## Table of contents
 
--   [Technologies](#technologies)
--   [Setup for local development](#setup-for-local-development)
--   [Instructions for deployment](#instructions-for-deployment)
--   [Status](#status)
--   [Contact](#contact)
--   [License](#license)
+- [Technologies](#technologies)
+- [Setup for local development](#setup-for-local-development)
+- [Instructions for deployment](#instructions-for-deployment)
+- [Status](#status)
+- [Contact](#contact)
+- [License](#license)
 
 ## Technologies
 
 Front-end:
 
--   JavaScript ES6 + React + Material-UI
+- JavaScript ES6 + React + Material-UI
 
 Back-end:
 
--   Node.js + Express + MongoDB Atlas Cloud Database
+- Node.js + Express + MongoDB Atlas Cloud Database
 
 ## Setup for local development
 
 Get your local copy of the repository by cloning or forking.
 
 If not yet installed, get [Node JS](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm).
-Install project package dependencies in the `root` directory and in the `client` directory - run `npm install`
+Install project package dependencies in the `server` directory and in the `client` directory - run `npm install`
 in the terminal.
 
 App configuration values are stored in the `.env` files. For your local build, rename `.env.sample` files to `.env` in both
-`root` and `client` directories, this is where you set your custom app values (secrets).
+`server` and `client` directories, this is where you set your custom app values (secrets).
 
 To get `REACT_APP_API_KEY` value visit [GNews](https://gnews.io/), create an account and replace `<your_api_key>` to your API-Token (API-Key)
 value in `.env` file in the `client` directory.
@@ -52,14 +53,15 @@ value in `.env` file in the `client` directory.
 To get `MONGODB_CONNECTION_STRING` value visit [MongoDB](https://www.mongodb.com/), create an account and follow
 [instructions](https://docs.atlas.mongodb.com/tutorial/create-atlas-account/) to create a free Atlas Cloud Database - Cluster.
 Then replace `<password>` to your database password value and `<databaseName>` to your database name in `.env` file
-in the `root` directory.
+in the `server` directory.
 
-To start back-end development version - run `npm run server` in the terminal in the `root` directory.
+To start back-end development version - run `npm run server` in the terminal in the `server` directory.
 
 To start front-end development version - run `npm start` in the terminal in the `client` directory.
 
 If you find any bug or would like to add a new feature to the codebase, please create an issue and commit your changes.
 
+<!--
 ## Instructions for deployment
 
 1. Create an account on [Heroku](https://www.heroku.com/home) cloud service.
@@ -73,7 +75,7 @@ If you find any bug or would like to add a new feature to the codebase, please c
 `heroku config:set REACT_APP_API_KEY=<your_api_key>`
 
 6. To receive and save user log values in your MongoDB Atlas Cloud Database, select your database on MongoDB dashboard, then select
-   `Network Access` settings and edit `IP Address` to "allow access from anywhere".
+   `Network Access` settings and edit `IP Address` to "allow access from anywhere". -->
 
 ## Status
 
