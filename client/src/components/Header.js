@@ -12,22 +12,15 @@ import NoArticleError from "./NoArticleError";
 const Header = () => {
   const classes = useStyles();
 
-  // State for input query.
   const [query, setQuery] = useState("");
-  // State for articles array.
   const [articles, setArticles] = useState([]);
-  // State for form submission.
   const [submitted, setSubmitted] = useState(false);
-  // State for loading.
   const [loading, setLoading] = useState(false);
-  // State for error on form submission.
   const [error, setError] = useState(false);
-  // State for error on input validation.
   const [notAllowedInputValue, setNotAllowedInputValue] = useState(false);
 
   const allowedInputValues = /^[0-9a-zA-Z-\s]+$/;
 
-  // Function for input validation - only alphanumeric values and spaces are allowed.
   const validateInput = (input) => {
     if (input.match(allowedInputValues) || input === "") {
       setNotAllowedInputValue(false);
@@ -36,14 +29,12 @@ const Header = () => {
     }
   };
 
-  // Function for user input handling and setting query.
   const handleInputChange = (e) => {
     let value = e.target.value;
     validateInput(value);
     setQuery(value);
   };
 
-  // Function for form submission.
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
@@ -74,7 +65,6 @@ const Header = () => {
     }
   };
 
-  // Function fetching search value to the server.
   const fetchSearchValueToTheServer = (data) => {
     const requestOptions = {
       method: "POST",
