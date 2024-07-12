@@ -40,7 +40,7 @@ const Header = () => {
 
     const API_KEY = process.env.REACT_APP_API_KEY;
 
-    const SEARCH_ENDPOINT = `https://gnews.io/api/v4/search?q=${query}&max=9&apikey=${API_KEY}`;
+    const SEARCH_ENDPOINT = `https://gnews.io/api/v4/search?q=${query}&max=9&lang=en&apikey=${API_KEY}`;
 
     if (!query || notAllowedInputValue) {
       return;
