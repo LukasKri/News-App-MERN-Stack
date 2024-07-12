@@ -1,0 +1,19 @@
+{
+  "name": "news-app-mern-stack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "install": "concurrently \"npm run install-client\" \"npm run install-server\"",
+    "server": "cd server && npm run server",
+    "client": "cd client && npm start",
+    "build": "npm run build-client",
+    "build-client": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.12"
+  }
+}
