@@ -75,7 +75,7 @@ const Header = () => {
       body: JSON.stringify({ data }),
     };
 
-    fetch("/searchValue", requestOptions).catch((error) => {
+    fetch("/api/searchValue", requestOptions).catch((error) => {
       console.log(error);
     });
   };

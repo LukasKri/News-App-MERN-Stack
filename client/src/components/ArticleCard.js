@@ -29,7 +29,7 @@ const ArticleCard = ({ article }) => {
       body: JSON.stringify({ data }),
     };
 
-    fetch("/clickedArticle", requestOptions).catch((error) => {
+    fetch("/api/clickedArticle", requestOptions).catch((error) => {
       console.log(error);
     });
   };
