@@ -7,11 +7,11 @@ for articles from a variety of sources, including Google News. Front-end was cre
 using Material-UI components, back-end was created with Node.js and MongoDB Atlas Cloud Database, which
 logs user actions (search queries and opened articles data) to the cloud database. The app is deployed in
 
-<!-- [Heroku](https://www.heroku.com/home) cloud service. -->
+[Render](https://render.com/) cloud service.
 
 ## Live demo
 
-<!-- https://news-app-mern-stack.herokuapp.com/ -->
+https://news-app-mern-stack-1.onrender.com
 
 ## GIF
 
@@ -21,7 +21,6 @@ logs user actions (search queries and opened articles data) to the cloud databas
 
 - [Technologies](#technologies)
 - [Setup for local development](#setup-for-local-development)
-- [Instructions for deployment](#instructions-for-deployment)
 - [Status](#status)
 - [Contact](#contact)
 - [License](#license)
@@ -60,22 +59,6 @@ To start back-end development version - run `npm run server` in the terminal in 
 To start front-end development version - run `npm start` in the terminal in the `client` directory.
 
 If you find any bug or would like to add a new feature to the codebase, please create an issue and commit your changes.
-
-<!--
-## Instructions for deployment
-
-1. Create an account on [Heroku](https://www.heroku.com/home) cloud service.
-2. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
-3. Create a new app in [Heroku dashboard](https://dashboard.heroku.com/apps), app name should be unique.
-4. Follow instructions for the deployment process.
-5. Add Config Vars for secrets in your `.env` files, replace your values and run these commands in the terminal:
-
-`heroku config:set MONGODB_CONNECTION_STRING=mongodb+srv://admin:<password>@news-app.bdk3q.mongodb.net/<databaseName>`
-
-`heroku config:set REACT_APP_API_KEY=<your_api_key>`
-
-6. To receive and save user log values in your MongoDB Atlas Cloud Database, select your database on MongoDB dashboard, then select
-   `Network Access` settings and edit `IP Address` to "allow access from anywhere". -->
 
 ## Status
 
