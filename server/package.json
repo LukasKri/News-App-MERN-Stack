@@ -4,7 +4,8 @@
     "description": "",
     "main": "server.js",
     "scripts": {
-        "server": "nodemon server.js",
+        "nodemon-server": "nodemon server.js",
+        "node-server": "node server.js",
         "build": "cd ../client && npm run build",
         "install-client": "cd ../client && npm install"
     },
